@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101523">
+    <meta
+      name="description"
+      content="上から落ちてくるフルーツをバケットで受け止める、星空の果樹園ゲーム。"
+    >
+    <title>星屑果樹園 — フルーツキャッチ</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="heading">
+        <p class="eyebrow"><span aria-hidden="true">✦</span> ORBITAL ORCHARD · NIGHT SHIFT</p>
+        <h1>星屑<span>果樹園</span></h1>
+        <p class="intro">落ちてくる星の果実を、バケットですべて受け止めよう。</p>
+      </header>
+
+      <section class="scoreboard" aria-label="スコア">
+        <div class="score-card">
+          <span class="score-label">受け止めた果実</span>
+          <span id="score" class="score-value" aria-live="polite">0</span>
+        </div>
+        <div class="fruit-label">
+          <span class="fruit-icon" aria-hidden="true">✳</span>
+          <span id="remaining">残り 20</span>
+        </div>
+        <div class="score-card score-card-right">
+          <span class="score-label">ライフ</span>
+          <span id="lives" class="score-value">♥♥♥</span>
+        </div>
+      </section>
+
+      <section class="arena-frame" aria-label="ゲーム">
+        <canvas
+          id="arena"
+          width="960"
+          height="540"
+          tabindex="0"
+          aria-label="左右矢印キー、AとDキー、または指でバケットを動かして落ちるフルーツをキャッチしてください。"
+        ></canvas>
+      </section>
+
+      <div class="game-actions">
+        <p id="message" class="message" aria-live="polite">
+          ← → または A D でバケットを動かそう
+        </p>
+        <button type="button" id="restart" class="restart-button" hidden>もう一度収穫する</button>
+      </div>
+
+      <footer class="how-to-play">
+        <span class="key-hint" aria-hidden="true">← →</span>
+        <span>A・Dでも移動</span>
+        <span class="hint-divider" aria-hidden="true">·</span>
+        <span class="key-hint" aria-hidden="true">MOUSE</span>
+        <span>タッチでも操作</span>
+        <span class="hint-divider" aria-hidden="true">·</span>
+        <span>20個キャッチでクリア</span>
+      </footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
